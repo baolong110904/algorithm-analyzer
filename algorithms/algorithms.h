@@ -3,3 +3,6 @@
 #include "shakerSort.cpp"
 #include "insertionSort.cpp"
 #include "selectionSort.cpp"
+#include "shellsort.cpp"
+#include "quicksort.cpp"
+#include "heapsort.cpp"

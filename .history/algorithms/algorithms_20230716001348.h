@@ -7,5 +7,4 @@
 #include "quicksort.cpp"
 #include "heapsort.cpp"
 #include "countingsort.cpp"
-#include "radixsort.cpp"
-#include "flashsort.cpp"
+#include "radixsort"

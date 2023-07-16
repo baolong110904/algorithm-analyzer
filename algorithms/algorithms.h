@@ -1,15 +1,15 @@
 
-// #include "selectionSort.cpp"
-// #include "insertionSort.cpp"
-// #include "bubbleSort.cpp"
-// #include "shakerSort.cpp"
-// #include "shellSort.cpp"
-// #include "heapSort.cpp"
-// #include "mergeSort.cpp"
-// #include "quickSort.cpp"
-// #include "countingSort.cpp"
-// #include "radixSort.cpp"
-// #include "flashSort.cpp"
+#include "selectionSort.cpp"
+#include "insertionSort.cpp"
+#include "bubbleSort.cpp"
+#include "shakerSort.cpp"
+#include "shellSort.cpp"
+#include "heapSort.cpp"
+#include "mergeSort.cpp"
+#include "quickSort.cpp"
+#include "countingSort.cpp"
+#include "radixSort.cpp"
+#include "flashSort.cpp"
 
 void sort(string sort_name, string output_type, int arr[], int n, int &count_comparision, double &count_time) {
     if (sort_name == "selection-sort") {

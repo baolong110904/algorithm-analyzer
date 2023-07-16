@@ -1,2 +1,0 @@
-//Comparision
-void flash

@@ -1,6 +1,6 @@
 
 // Comparation
-void quickSort_comparation(int arr[], int first, int last, int &count_compare) {
+void quickSort_compare(int arr[], int first, int last, int &count_compare) {
     int temp_count_compare = 0;
 
     int pivot = arr[(first + last) / 2];
@@ -20,10 +20,10 @@ void quickSort_comparation(int arr[], int first, int last, int &count_compare) {
     } while (++temp_count_compare && indexFromLeft <= indexFromRight);
 
     if (++temp_count_compare && first < indexFromRight) {
-        quickSort_comparation(arr, first, indexFromRight, count_compare);
+        quickSort_compare(arr, first, indexFromRight, count_compare);
     }
     if (++temp_count_compare && indexFromLeft < last) {
-        quickSort_comparation(arr, indexFromLeft, last, count_compare);
+        quickSort_compare(arr, indexFromLeft, last, count_compare);
     }
 
     count_compare += temp_count_compare;

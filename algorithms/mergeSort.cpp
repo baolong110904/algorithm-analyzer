@@ -1,6 +1,6 @@
 
 // Comparation
-void merge_comparation(int arr[], int first, int mid, int last, int &count_compare) {
+void merge_compare(int arr[], int first, int mid, int last, int &count_compare) {
     int temp_count_compare = 0;
 
     int first1 = first, last1 = mid;
@@ -25,19 +25,19 @@ void merge_comparation(int arr[], int first, int mid, int last, int &count_compa
 
     count_compare += temp_count_compare;
 }
-void mergeSort_comparation(int arr[], int first, int last, int &count_compare) {
+void mergeSort_compare(int arr[], int first, int last, int &count_compare) {
     count_compare = 0;
 
     if (++count_compare && first < last) {
         int mid = (first + last) / 2;
-        mergeSort_comparation(arr, first, mid, count_compare);
-        mergeSort_comparation(arr, mid + 1, last, count_compare);
-        merge_comparation(arr, first, mid, last, count_compare);
+        mergeSort_compare(arr, first, mid, count_compare);
+        mergeSort_compare(arr, mid + 1, last, count_compare);
+        merge_compare(arr, first, mid, last, count_compare);
     }
 }
 
 // Time
-void merge_time(int arr[], int first, int mid, int last, double &count_time) {
+void merge_time(int arr[], int first, int mid, int last) {
     int first1 = first, last1 = mid;
     int first2 = mid + 1, last2 = last;
 
@@ -65,7 +65,7 @@ void mergeSort_time(int arr[], int first, int last, double &count_time) {
         int mid = (first + last) / 2;
         mergeSort_time(arr, first, mid, count_time);
         mergeSort_time(arr, mid + 1, last, count_time);
-        merge_time(arr, first, mid, last, count_time);
+        merge_time(arr, first, mid, last);
     }
 
     double time_end = clock();

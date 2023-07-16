@@ -1,7 +1,7 @@
 # Sorting Algorithms Analyzer
 
 #### How to download
-Form your command line:
+From your command line:
 
 Clone the repo
 ```sh
@@ -15,11 +15,18 @@ Open VS Code
 ```sh
 code .
 ```
-### First task
-Inside **algorithms folder** create a file **algorithm_name.cpp**  that includes 2 version of algorithms (running time analyzer & operation analyzer)
+### Stage 1
+Inside **algorithms folder** create a file **algorithmName.cpp**  that includes 2 version of algorithms (running time analyzer & compare analyzer)
 
-Include the file in **algorithms.hpp**
+Include the file in **algorithms.h**
 
 Note the details of the algorithm (idea, big O, bla bla...) at the end of file (comment)
 
 **Deadline Sat July 15**
+
+### Stage 2
+**Bao:** completing code
+**Long:** starting writing report
+**Dung & Quan:** finding how to draw chart & trying drawing some charts (no need accurate data)
+
+**Deadline Thu July 20**

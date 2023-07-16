@@ -33,7 +33,7 @@ void heapSort_time(int *array, int size)
 
     double end = clock();
     double time = (end - start) / CLOCKS_PER_SEC;
-    std::cout << "Time of heap sort taken: " << time << " seconds" << std::endl;
+    cout << "Time of heap sort taken: " << time << " seconds" << endl;
 }
 
 // Calculating total comparison
@@ -58,9 +58,9 @@ void heapify_comparison(int *array, int size, int index, int &count)
 void heapSort_comparison(int *array, int size)
 {
     int count = 0;
-    for (int i = size / 2 - 1; i >= 0; i--)
+    for (int i = size / 2 - 1;count++ && i >= 0; i--)
         heapify_comparison(array, size, i, count);
-    for (int i = size - 1; i > 0; i--)
+    for (int i = size - 1;count++ && i > 0; i--)
     {
         swap(array[0], array[i]);
         heapify_comparison(array, i, 0, count);

@@ -18,8 +18,8 @@ void bubbleSort_time(int *array, int size)
 void bubbleSort_comparison(int *array, int size)
 {
     int count = 0;
-    for (int i = 0; i <= size - 1; i++)
-        for (int j = size - 1; j >= i; j--)
+    for (int i = 0;count++ && i <= size - 1; i++)
+        for (int j = size - 1;count++ && j >= i; j--)
             if (count++ && array[j - 1] > array[j])
                 swap(array[j - 1], array[j]);
 

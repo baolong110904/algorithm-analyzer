@@ -22,4 +22,4 @@ Include the file in **algorithms.hpp**
 
 Note the details of the algorithm (idea, big O, bla bla...) at the end of file (comment)
 
-** Deadline Sat July 15**
+**Deadline Sat July 15**

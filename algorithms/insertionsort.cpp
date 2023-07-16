@@ -12,6 +12,7 @@ void InsertionSort_comparison(int a[], int n, int &count_compare) {
         a[j + 1] = key;
     }
 }
+
 void InsertionSort_timetaken(int a[], int n) {
     clock_t startTime = clock();  // Start the timer
 

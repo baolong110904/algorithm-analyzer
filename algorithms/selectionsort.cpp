@@ -1,18 +1,18 @@
-void SelectionSort_operations(int a[], int n, long long& operations) {
+void SelectionSort_comparison(int a[], int n, long long& count_compare) {
+    count_compare = 0;
     for (int i = 0; i < n; i++) {
         int minPos = i;
-        for (int j = i + 1; j < n; j++) {
-            operations++;  // Count the comparison operation
+        for (int j = i + 1; count_compare++ && j < n; j++) {
             if (a[j] < a[minPos]) {
                 minPos = j;
             }
         }
         if (minPos != i) {
             swap(a[minPos], a[i]);
-            operations++;  // Count the swap operation
         }
     }
 }
+
 
 void SelectionSort_timetaken(int a[], int n) {
     clock_t start = clock();  // Start the timer

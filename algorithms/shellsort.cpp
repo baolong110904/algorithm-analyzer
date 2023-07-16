@@ -51,7 +51,7 @@ void shellSort_comparison(int *array, int size)
     cout << "Total comparison of shell sort: " << count << endl;
 }
 
-/*DESCRIPTION
+/* DESCRIPTION
 Shell Sort is one of the oldest sorting algorithms and it's an extension of the Insertion Sort.
 This algorithm is fast and easy to implement, but it's hard to measure its performances.
 
@@ -63,4 +63,6 @@ can optimize performances as it's not limited by just comparing two adjacent ele
 - Best Case: O(n × log n)
 - Worst Case: O(n2)
 - Space Complexity: O(1)
+
+(source: sortvisualizer.com)
 */

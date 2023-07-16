@@ -26,7 +26,7 @@ void bubbleSort_comparison(int *array, int size)
     cout << "Total comparison of bubble sort: " << count << endl;
 }
 
-/*
+/* DESCRIPTION
 Bubble Sort is an iterative sorting algorithm that imitates the movement of bubbles
 in sparkling water. The bubbles represents the elements of the data structure.
 
@@ -39,4 +39,5 @@ compares the current element with the next one, swapping them if they are in the
 - Best Case: O(n)
 - Worst Case: O(n2)
 - Space Complexity:	O(1)
+(source: sortvisualizer.com)
 */

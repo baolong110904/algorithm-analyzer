@@ -69,7 +69,7 @@ void heapSort_comparison(int *array, int size)
     cout << "Total comparison: " << count << endl;
 }
 
-/*
+/* DESCRIPTION
 Heap Sort is an in-place iterative sorting algorithm based on auxiliary 
 data structures called heap. It's less efficient than algorithm with the 
 same time complexity and it's not suitable for data structures with few elements.
@@ -81,4 +81,6 @@ has a value bigger or equal to its children. Consequently, the root will hold th
 - Best Case:	O(n × log n)
 - Worst Case: O(n × log n)
 - Space Complexity: O(1)
+
+(source: sortvisualizer.com)
 */

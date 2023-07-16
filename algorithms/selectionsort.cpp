@@ -1,15 +1,13 @@
-void SelectionSort_operations(int a[], int n, long long& operations) {
-    for (int i = 0; i < n; i++) {
+void selectionSort_comparation(int a[], int n, int& count_comparation) {
+    for (int i = 0; ++count_comparation && i < n; i++) {
         int minPos = i;
-        for (int j = i + 1; j < n; j++) {
-            operations++;  // Count the comparison operation
-            if (a[j] < a[minPos]) {
+        for (int j = i + 1; ++count_comparation && j < n; j++) {
+            if (++count_comparation && a[j] < a[minPos]) {
                 minPos = j;
             }
         }
-        if (minPos != i) {
+        if (++count_comparation && minPos != i) {
             swap(a[minPos], a[i]);
-            operations++;  // Count the swap operation
         }
     }
 }

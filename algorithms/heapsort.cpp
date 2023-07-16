@@ -33,7 +33,7 @@ void heapSort_time(int *array, int size)
 
     double end = clock();
     double time = (end - start) / CLOCKS_PER_SEC;
-    std::cout << "Time of heap sort taken: " << time << " seconds" << std::endl;
+    cout << "Time of heap sort taken: " << time << " seconds" << endl;
 }
 
 // Calculating total comparison
@@ -58,9 +58,9 @@ void heapify_comparison(int *array, int size, int index, int &count)
 void heapSort_comparison(int *array, int size)
 {
     int count = 0;
-    for (int i = size / 2 - 1; i >= 0; i--)
+    for (int i = size / 2 - 1; count++ && i >= 0; i--)
         heapify_comparison(array, size, i, count);
-    for (int i = size - 1; i > 0; i--)
+    for (int i = size - 1; count++ && i > 0; i--)
     {
         swap(array[0], array[i]);
         heapify_comparison(array, i, 0, count);
@@ -70,11 +70,11 @@ void heapSort_comparison(int *array, int size)
 }
 
 /* DESCRIPTION
-Heap Sort is an in-place iterative sorting algorithm based on auxiliary 
-data structures called heap. It's less efficient than algorithm with the 
+Heap Sort is an in-place iterative sorting algorithm based on auxiliary
+data structures called heap. It's less efficient than algorithm with the
 same time complexity and it's not suitable for data structures with few elements.
 
-The heap is a data structure representable as a binary tree, where each node 
+The heap is a data structure representable as a binary tree, where each node
 has a value bigger or equal to its children. Consequently, the root will hold the maximum value.
 
 - Average Complexity: O(n × log n)

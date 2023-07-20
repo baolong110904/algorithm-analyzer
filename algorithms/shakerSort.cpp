@@ -1,27 +1,3 @@
-
-// Comparation
-void shakerSort_compare(int arr[], int n, long long int &count_compare) {
-    count_compare = 0;
-
-    int left = 1, right = n-1, k = n-1;
-    do {
-        for (int j = right; ++count_compare && j >= left; --j) {
-            if (++count_compare && arr[j - 1] > arr[j]) {
-                swap(arr[j - 1], arr[j]);
-                k = j;
-            }
-        }
-        left = k + 1;
-        for (int j = left; ++count_compare && j <= right; ++j) {
-            if (++count_compare && arr[j - 1] > arr[j]) {
-                swap(arr[j - 1], arr[j]); 
-                k = j;
-            }
-        }
-        right = k - 1;
-    } while (++count_compare && left <= right);
-}
-
 // Time
 void shakerSort_time(int arr[], int n, double &count_time) {
     double time_start = clock();
@@ -46,6 +22,27 @@ void shakerSort_time(int arr[], int n, double &count_time) {
 
     double time_end = clock();
     count_time = (time_end - time_start) / CLOCKS_PER_SEC;
+}
+
+// Comparation
+void shakerSort_compare(int arr[], int n, long long int &count_compare) {
+    int left = 1, right = n-1, k = n-1;
+    do {
+        for (int j = right; ++count_compare && j >= left; --j) {
+            if (++count_compare && arr[j - 1] > arr[j]) {
+                swap(arr[j - 1], arr[j]);
+                k = j;
+            }
+        }
+        left = k + 1;
+        for (int j = left; ++count_compare && j <= right; ++j) {
+            if (++count_compare && arr[j - 1] > arr[j]) {
+                swap(arr[j - 1], arr[j]); 
+                k = j;
+            }
+        }
+        right = k - 1;
+    } while (++count_compare && left <= right);
 }
 
 /*

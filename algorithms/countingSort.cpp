@@ -1,36 +1,20 @@
-// Compare
-void countingSort_compare(int arr[], int n, int u, long long int &count_compare) {
-    count_compare = 0;
-
-    int *f = new int[u + 1]{0};
-    for (int i = 0; ++count_compare && i < n; i++) {
-        f[arr[i]]++;
-    }
-    for (int i = 1; ++count_compare && i <= u; i++) {
-        f[i] = f[i - 1] + f[i];
-    }
-
-    int *b = new int[n];
-    for (int i = n - 1; ++count_compare && i >= 0; i--) {
-        b[f[arr[i]] - 1] = arr[i];
-        f[arr[i]]--;
-    }
-
-    for (int i = 0; ++count_compare && i < n; i++) {
-        arr[i] = b[i];
-    }
-}
-
 // Time
-void countingSort_time(int arr[], int n, int u, double &count_time) {
+void countingSort_time(int arr[], int n, double &count_time) {
     double time_start = clock();
 
-    int *f = new int[u + 1]{0};
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    int *f = new int[max + 1]{0};
     for (int i = 0; i < n; i++) {
         f[arr[i]]++;
     }
 
-    for (int i = 1; i <= u; i++) {
+    for (int i = 1; i <= max; i++) {
         f[i] = f[i - 1] + f[i];
     }
 
@@ -46,6 +30,34 @@ void countingSort_time(int arr[], int n, int u, double &count_time) {
 
     double time_end = clock();
     count_time = (time_end - time_start) / CLOCKS_PER_SEC;
+}
+
+// Compare
+void countingSort_compare(int arr[], int n, long long int &count_compare) {
+    int max = arr[0];
+    for (int i = 1; ++count_compare && i < n; i++) {
+        if (++count_compare && arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    int *f = new int[max + 1]{0};
+    for (int i = 0; ++count_compare && i < n; i++) {
+        f[arr[i]]++;
+    }
+    for (int i = 1; ++count_compare && i <= max; i++) {
+        f[i] = f[i - 1] + f[i];
+    }
+
+    int *b = new int[n];
+    for (int i = n - 1; ++count_compare && i >= 0; i--) {
+        b[f[arr[i]] - 1] = arr[i];
+        f[arr[i]]--;
+    }
+
+    for (int i = 0; ++count_compare && i < n; i++) {
+        arr[i] = b[i];
+    }
 }
 
 /*

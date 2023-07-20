@@ -1,43 +1,3 @@
-// Compare
-void radixSort_compare(int arr[], int n, long long int &count_compare) {
-    count_compare = 0;
-
-    int max_val = arr[0];
-    for (int i = 0; ++count_compare && i < n; i++) {
-        if (++count_compare && arr[i] > max_val) {
-            max_val = arr[i];
-        }
-    }
-    int digits = 0, div;
-    do {
-        digits++;
-        div = max_val / pow(10, digits);
-    } while (++count_compare && div > 0);
-
-    int *tempArr[10];
-    for (int i = 0; ++count_compare && i < 10; i++) {
-        tempArr[i] = new int[n];
-    }
-    int tempCount[10];
-
-    for (int i = 0; ++count_compare && i < digits; i++) {
-        int exp = pow(10, i);
-        for (int j = 0; ++count_compare && j < 10; j++) {
-            tempCount[j] = 0;
-        }
-        for (int j = 0; ++count_compare && j < n; j++) {
-            int idx = (arr[j] / exp) % 10;
-            tempArr[idx][tempCount[idx]++] = arr[j];
-        }
-
-        int idx = 0;
-        for (int j = 0; ++count_compare && j < 10; j++) {
-            for (int k = 0; ++count_compare && k < tempCount[j]; ++k) {
-                arr[idx++] = tempArr[j][k];
-            }
-        }
-    }
-}
 // Time
 void radixSort_time(int arr[], int n, double &count_time) {
     double time_start = clock();
@@ -81,6 +41,45 @@ void radixSort_time(int arr[], int n, double &count_time) {
 
     double time_end = clock();
     count_time = (time_end - time_start) / CLOCKS_PER_SEC;
+}
+
+// Compare
+void radixSort_compare(int arr[], int n, long long int &count_compare) {
+    int max_val = arr[0];
+    for (int i = 0; ++count_compare && i < n; i++) {
+        if (++count_compare && arr[i] > max_val) {
+            max_val = arr[i];
+        }
+    }
+    int digits = 0, div;
+    do {
+        digits++;
+        div = max_val / pow(10, digits);
+    } while (++count_compare && div > 0);
+
+    int *tempArr[10];
+    for (int i = 0; ++count_compare && i < 10; i++) {
+        tempArr[i] = new int[n];
+    }
+    int tempCount[10];
+
+    for (int i = 0; ++count_compare && i < digits; i++) {
+        int exp = pow(10, i);
+        for (int j = 0; ++count_compare && j < 10; j++) {
+            tempCount[j] = 0;
+        }
+        for (int j = 0; ++count_compare && j < n; j++) {
+            int idx = (arr[j] / exp) % 10;
+            tempArr[idx][tempCount[idx]++] = arr[j];
+        }
+
+        int idx = 0;
+        for (int j = 0; ++count_compare && j < 10; j++) {
+            for (int k = 0; ++count_compare && k < tempCount[j]; ++k) {
+                arr[idx++] = tempArr[j][k];
+            }
+        }
+    }
 }
 
 /*

@@ -6,6 +6,8 @@ void sort(string sort_name, string output_type, int arr[], int n, double &count_
         copy_arr[i] = arr[i];
     }
 
+    count_time = 0;
+    count_compare = 0;
     // Time
     if (output_type == "-time" || output_type == "-both") {
         if (sort_name == "selection-sort") {
@@ -25,7 +27,7 @@ void sort(string sort_name, string output_type, int arr[], int n, double &count_
         } else if (sort_name == "quick-sort") {
             quickSort_time(arr, 0, n-1, count_time);
         } else if (sort_name == "counting-sort") {
-            countingSort_time(arr, n, 0, count_time);
+            countingSort_time(arr, n, count_time);
         } else if (sort_name == "radix-sort") {
             radixSort_time(arr, n, count_time);
         } else if (sort_name == "flash-sort") {
@@ -51,7 +53,7 @@ void sort(string sort_name, string output_type, int arr[], int n, double &count_
         } else if (sort_name == "quick-sort") {
             quickSort_compare(copy_arr, 0, n-1, count_compare);
         } else if (sort_name == "counting-sort") {
-            countingSort_compare(copy_arr, n, 0, count_compare);
+            countingSort_compare(copy_arr, n, count_compare);
         } else if (sort_name == "radix-sort") {
             radixSort_compare(copy_arr, n, count_compare);
         } else if (sort_name == "flash-sort") {

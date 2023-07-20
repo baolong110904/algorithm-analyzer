@@ -4,7 +4,7 @@ bool isValidAlgorithm(string algorithm_name) {
         algorithm_name == "selection-sort" || algorithm_name == "insertion-sort" || algorithm_name == "bubble-sort" ||
         algorithm_name == "shaker-sort" || algorithm_name == "shell-sort" || algorithm_name == "heap-sort" ||
         algorithm_name == "merge-sort" || algorithm_name == "quick-sort" || algorithm_name == "counting-sort" ||
-        algorithm_name == "radix-sort" || algorithm_name == "lash-sort"
+        algorithm_name == "radix-sort" || algorithm_name == "flash-sort"
     );
 }
 
@@ -16,7 +16,7 @@ bool isValidOutputParameter(string output_parameter) {
     return (output_parameter == "-time" || output_parameter == "-comp" || output_parameter == "-both");
 }
 
-void todoCommand1(char* algorithm_name, char* input_file, char* output_parameter) {
+void todoCommand1(string algorithm_name, string input_file, string output_parameter) {
     ifstream ifs(input_file);
     if (ifs.is_open()) {
         // Read file
@@ -35,9 +35,13 @@ void todoCommand1(char* algorithm_name, char* input_file, char* output_parameter
         double count_time;
         long long int count_compare;
         sort(algorithm_name, output_parameter, arr, n, count_time, count_compare);
-        cout << "--------------------" << endl;
-        cout << "Running time: " << count_time << endl;
-        cout << "Comparisions: " << count_compare << endl;
+        cout << endl << "--------------------" << endl;
+        if (output_parameter == "-time" || output_parameter == "-both") {
+            cout << "Running time: " << count_time << endl;
+        }
+        if (output_parameter == "-comp" || output_parameter == "-both") {
+            cout << "Comparisions: " << count_compare << endl;
+        }
         // Write to output file
         ofstream ofs("store/output.txt");
         ofs << n << endl;
@@ -51,8 +55,8 @@ void todoCommand1(char* algorithm_name, char* input_file, char* output_parameter
     }
 }
 
-void todoCommand2(char* algorithm_name, char* input_size, char* input_order, char* output_parameter) {
-    int n = atoi(input_size);
+void todoCommand2(string algorithm_name, string input_size, string input_order, string output_parameter) {
+    int n = stoi(input_size);
     int dataType;
     if (string(input_order) == "-rand") {
         dataType = 0;
@@ -81,15 +85,19 @@ void todoCommand2(char* algorithm_name, char* input_size, char* input_order, cha
     double count_time;
     long long int count_compare;
     sort(algorithm_name, output_parameter, arr, n, count_time, count_compare);
-    cout << "--------------------" << endl;
-    cout << "Running time: " << count_time << endl;
-    cout << "Comparisions: " << count_compare << endl;
+    cout << endl << "--------------------" << endl;
+    if (output_parameter == "-time" || output_parameter == "-both") {
+        cout << "Running time: " << count_time << endl;
+    }
+    if (output_parameter == "-comp" || output_parameter == "-both") {
+        cout << "Comparisions: " << count_compare << endl;
+    }
     // Clear
     delete [] arr;
 }
 
-void todoCommand3(char* algorithm_name, char* input_size, char* output_parameter) {
-    int n = atoi(input_size);
+void todoCommand3(string algorithm_name, string input_size, string output_parameter) {
+    int n = stoi(input_size);
     // Generate array 
     int* arr_rand = new int [n];
     int* arr_sorted = new int [n];
@@ -122,29 +130,45 @@ void todoCommand3(char* algorithm_name, char* input_size, char* output_parameter
     double count_time;
     long long int count_compare;
     // Rand
-    cout << "Input order: Randomize" << endl;
+    cout << endl << "Input order: Randomize" << endl;
     sort(algorithm_name, output_parameter, arr_rand, n, count_time, count_compare);
     cout << "--------------------" << endl;
-    cout << "Running time: " << count_time << endl;
-    cout << "Comparisions: " << count_compare << endl;
+    if (output_parameter == "-time" || output_parameter == "-both") {
+        cout << "Running time: " << count_time << endl;
+    }
+    if (output_parameter == "-comp" || output_parameter == "-both") {
+        cout << "Comparisions: " << count_compare << endl;
+    }
     // Nsorted
-    cout << "Input order: Nearly sorted" << endl;
+    cout << endl << "Input order: Nearly sorted" << endl;
     sort(algorithm_name, output_parameter, arr_nsorted, n, count_time, count_compare);
     cout << "--------------------" << endl;
-    cout << "Running time: " << count_time << endl;
-    cout << "Comparisions: " << count_compare << endl;
+    if (output_parameter == "-time" || output_parameter == "-both") {
+        cout << "Running time: " << count_time << endl;
+    }
+    if (output_parameter == "-comp" || output_parameter == "-both") {
+        cout << "Comparisions: " << count_compare << endl;
+    }
     // Sorted
-    cout << "Input order: Sorted" << endl;
+    cout << endl << "Input order: Sorted" << endl;
     sort(algorithm_name, output_parameter, arr_sorted, n, count_time, count_compare);
     cout << "--------------------" << endl;
-    cout << "Running time: " << count_time << endl;
-    cout << "Comparisions: " << count_compare << endl;
+    if (output_parameter == "-time" || output_parameter == "-both") {
+        cout << "Running time: " << count_time << endl;
+    }
+    if (output_parameter == "-comp" || output_parameter == "-both") {
+        cout << "Comparisions: " << count_compare << endl;
+    }
     // Rev
+    cout << endl << "Input order: Reversed" << endl;
     sort(algorithm_name, output_parameter, arr_rev, n, count_time, count_compare);
     cout << "--------------------" << endl;
-    cout << "Running time: " << count_time << endl;
-    cout << "Comparisions: " << count_compare << endl;
-    cout << "Input order: Reversed" << endl;
+    if (output_parameter == "-time" || output_parameter == "-both") {
+        cout << "Running time: " << count_time << endl;
+    }
+    if (output_parameter == "-comp" || output_parameter == "-both") {
+        cout << "Comparisions: " << count_compare << endl;
+    }
     // Clear
     delete [] arr_rand;
     delete [] arr_nsorted;
@@ -152,7 +176,7 @@ void todoCommand3(char* algorithm_name, char* input_size, char* output_parameter
     delete [] arr_rev;
 }
 
-void todoCommand4(char* algorithm_name_1, char* algorithm_name_2, char* file_name) {
+void todoCommand4(string algorithm_name_1, string algorithm_name_2, string file_name) {
     ifstream ifs(file_name);
     if (ifs.is_open()) {
         // Read file
@@ -173,7 +197,7 @@ void todoCommand4(char* algorithm_name_1, char* algorithm_name_2, char* file_nam
         long long int count_compare_1, count_compare_2;
         sort(algorithm_name_1, "-both", arr_1, n, count_time_1, count_compare_1);
         sort(algorithm_name_2, "-both", arr_2, n, count_time_2, count_compare_2);
-        cout << "--------------------" << endl;
+        cout << endl << "--------------------" << endl;
         cout << "Running time: " << count_time_1 << " | " << count_time_2 << endl;
         cout << "Comparisions: " << count_compare_1 << " | " << count_compare_2 << endl;
         // Write to output file
@@ -190,8 +214,8 @@ void todoCommand4(char* algorithm_name_1, char* algorithm_name_2, char* file_nam
     }
 }
 
-void todoCommand5(char* algorithm_name_1, char* algorithm_name_2, char* input_size, char* input_order) {
-    int n = atoi(input_size);
+void todoCommand5(string algorithm_name_1, string algorithm_name_2, string input_size, string input_order) {
+    int n = stoi(input_size);
     int dataType;
     if (string(input_order) == "-rand") {
         dataType = 0;
@@ -225,7 +249,7 @@ void todoCommand5(char* algorithm_name_1, char* algorithm_name_2, char* input_si
     long long int count_compare_1, count_compare_2;
     sort(algorithm_name_1, "-both", arr_1, n, count_time_1, count_compare_1);
     sort(algorithm_name_2, "-both", arr_2, n, count_time_2, count_compare_2);
-    cout << "--------------------" << endl;
+    cout << endl << "--------------------" << endl;
     cout << "Running time: " << count_time_1 << " | " << count_time_2 << endl;
     cout << "Comparisions: " << count_compare_1 << " | " << count_compare_2 << endl;
     // Clear

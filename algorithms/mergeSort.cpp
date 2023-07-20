@@ -1,7 +1,7 @@
 
 // Comparation
-void merge_compare(int arr[], int first, int mid, int last, int &count_compare) {
-    int temp_count_compare = 0;
+void merge_compare(int arr[], int first, int mid, int last, long long int &count_compare) {
+    long long int temp_count_compare = 0;
 
     int first1 = first, last1 = mid;
     int first2 = mid + 1, last2 = last;
@@ -25,7 +25,7 @@ void merge_compare(int arr[], int first, int mid, int last, int &count_compare) 
 
     count_compare += temp_count_compare;
 }
-void mergeSort_compare(int arr[], int first, int last, int &count_compare) {
+void mergeSort_compare(int arr[], int first, int last, long long int &count_compare) {
     count_compare = 0;
 
     if (++count_compare && first < last) {

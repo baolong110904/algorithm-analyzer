@@ -1,7 +1,7 @@
 
 // Comparation
-void quickSort_compare(int arr[], int first, int last, int &count_compare) {
-    int temp_count_compare = 0;
+void quickSort_compare(int arr[], int first, int last, long long int &count_compare) {
+    long long int temp_count_compare = 0;
 
     int pivot = arr[(first + last) / 2];
     int indexFromLeft = first, indexFromRight = last;

@@ -1,5 +1,5 @@
 // Compare
-void countingSort_compare(int arr[], int n, int u, int &count_compare) {
+void countingSort_compare(int arr[], int n, int u, long long int &count_compare) {
     count_compare = 0;
 
     int *f = new int[u + 1]{0};

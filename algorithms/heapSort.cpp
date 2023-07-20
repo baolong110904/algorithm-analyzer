@@ -1,27 +1,23 @@
 
 // Compare
-void heapify_compare(int *arr, int n, int index, int &count_compare) {
-    int temp_count_compare = 0;
-
+void heapify_compare(int arr[], int n, int index, long long int &count_compare) {
     int left = 2 * index + 1;
     int right = 2 * index + 2;
     int largest = index;
 
-    if ((++temp_count_compare && left < n) && (++temp_count_compare && arr[left] > arr[largest])) {
+    if ((++count_compare && left < n) && (++count_compare && arr[left] > arr[largest])) {
         largest = left;
     }
-    if ((++temp_count_compare && right < n) && (++temp_count_compare && arr[right] > arr[largest])) {
+    if ((++count_compare && right < n) && (++count_compare && arr[right] > arr[largest])) {
         largest = right;
     }
-    if (++temp_count_compare && largest != index) {
+    if (++count_compare && largest != index) {
         swap(arr[largest], arr[index]);
-        heapify_compare(arr, n, largest, temp_count_compare);
+        heapify_compare(arr, n, largest, count_compare);
     }
-
-    count_compare += temp_count_compare;
 }
 
-void heapSort_compare(int *arr, int n, int &count_compare) {
+void heapSort_compare(int arr[], int n, long long int &count_compare) {
     count_compare = 0;
     
     for (int i = n / 2 - 1; ++count_compare && i >= 0; i--) {

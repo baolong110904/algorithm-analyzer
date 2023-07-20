@@ -1,41 +1,3 @@
-
-// Comparation
-void merge_compare(int arr[], int first, int mid, int last, long long int &count_compare) {
-    long long int temp_count_compare = 0;
-
-    int first1 = first, last1 = mid;
-    int first2 = mid + 1, last2 = last;
-
-    int temp[999];
-    int idx = first1;
-
-    while ((++temp_count_compare && first1 <= last1) && (++temp_count_compare && first2 <= last2)) {
-        temp[idx++] = (++temp_count_compare && arr[first1] <= arr[first2]) ? arr[first1++] : arr[first2++];
-    }
-    while (++temp_count_compare && first1 <= last1) {
-        temp[idx++] = arr[first1++];
-    }
-    while (++temp_count_compare && first2 <= last2) {
-        temp[idx++] = arr[first2++];
-    }
-
-    for (idx = first; ++temp_count_compare && idx <= last; ++idx) {
-        arr[idx] = temp[idx];
-    }
-
-    count_compare += temp_count_compare;
-}
-void mergeSort_compare(int arr[], int first, int last, long long int &count_compare) {
-    count_compare = 0;
-
-    if (++count_compare && first < last) {
-        int mid = (first + last) / 2;
-        mergeSort_compare(arr, first, mid, count_compare);
-        mergeSort_compare(arr, mid + 1, last, count_compare);
-        merge_compare(arr, first, mid, last, count_compare);
-    }
-}
-
 // Time
 void merge_time(int arr[], int first, int mid, int last) {
     int first1 = first, last1 = mid;
@@ -71,6 +33,38 @@ void mergeSort_time(int arr[], int first, int last, double &count_time) {
     double time_end = clock();
     count_time = (time_end - time_start) / CLOCKS_PER_SEC;
 }
+
+// Comparation
+void merge_compare(int arr[], int first, int mid, int last, long long int &count_compare) {
+    int first1 = first, last1 = mid;
+    int first2 = mid + 1, last2 = last;
+
+    int temp[999];
+    int idx = first1;
+
+    while ((++count_compare && first1 <= last1) && (++count_compare && first2 <= last2)) {
+        temp[idx++] = (++count_compare && arr[first1] <= arr[first2]) ? arr[first1++] : arr[first2++];
+    }
+    while (++count_compare && first1 <= last1) {
+        temp[idx++] = arr[first1++];
+    }
+    while (++count_compare && first2 <= last2) {
+        temp[idx++] = arr[first2++];
+    }
+
+    for (idx = first; ++count_compare && idx <= last; ++idx) {
+        arr[idx] = temp[idx];
+    }
+}
+void mergeSort_compare(int arr[], int first, int last, long long int &count_compare) {
+    if (++count_compare && first < last) {
+        int mid = (first + last) / 2;
+        mergeSort_compare(arr, first, mid, count_compare);
+        mergeSort_compare(arr, mid + 1, last, count_compare);
+        merge_compare(arr, first, mid, last, count_compare);
+    }
+}
+
 
 
 /*

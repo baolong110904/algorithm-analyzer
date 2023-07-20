@@ -32,3 +32,5 @@ Note the details of the algorithm (idea, big O, bla bla...) at the end of file (
 **Dung & Quan:** finding how to draw chart & trying drawing some charts (no need accurate data)
 
 **Deadline Thu July 20**
+
+**Report Latex link: https://www.overleaf.com/read/wgzjmtxrzhqm

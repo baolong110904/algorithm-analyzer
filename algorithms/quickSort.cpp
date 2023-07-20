@@ -1,34 +1,3 @@
-
-// Comparation
-void quickSort_compare(int arr[], int first, int last, long long int &count_compare) {
-    long long int temp_count_compare = 0;
-
-    int pivot = arr[(first + last) / 2];
-    int indexFromLeft = first, indexFromRight = last;
-
-    do {
-        while (++temp_count_compare && arr[indexFromLeft] < pivot) {
-            indexFromLeft++;
-        }
-        while (++temp_count_compare && arr[indexFromRight] > pivot) {
-            indexFromRight--;
-        }
-        if (++temp_count_compare && indexFromLeft <= indexFromRight) {
-            swap(arr[indexFromLeft], arr[indexFromRight]);
-            indexFromLeft++; indexFromRight--;
-        }
-    } while (++temp_count_compare && indexFromLeft <= indexFromRight);
-
-    if (++temp_count_compare && first < indexFromRight) {
-        quickSort_compare(arr, first, indexFromRight, count_compare);
-    }
-    if (++temp_count_compare && indexFromLeft < last) {
-        quickSort_compare(arr, indexFromLeft, last, count_compare);
-    }
-
-    count_compare += temp_count_compare;
-}
-
 // Time
 void quickSort_time(int arr[], int first, int last, double &count_time) {
     double time_start = clock();
@@ -59,6 +28,33 @@ void quickSort_time(int arr[], int first, int last, double &count_time) {
     double time_end = clock();
     count_time = (time_end - time_start) / CLOCKS_PER_SEC;
 }
+
+// Comparation
+void quickSort_compare(int arr[], int first, int last, long long int &count_compare) {
+    int pivot = arr[(first + last) / 2];
+    int indexFromLeft = first, indexFromRight = last;
+
+    do {
+        while (++count_compare && arr[indexFromLeft] < pivot) {
+            indexFromLeft++;
+        }
+        while (++count_compare && arr[indexFromRight] > pivot) {
+            indexFromRight--;
+        }
+        if (++count_compare && indexFromLeft <= indexFromRight) {
+            swap(arr[indexFromLeft], arr[indexFromRight]);
+            indexFromLeft++; indexFromRight--;
+        }
+    } while (++count_compare && indexFromLeft <= indexFromRight);
+
+    if (++count_compare && first < indexFromRight) {
+        quickSort_compare(arr, first, indexFromRight, count_compare);
+    }
+    if (++count_compare && indexFromLeft < last) {
+        quickSort_compare(arr, indexFromLeft, last, count_compare);
+    }
+}
+
 
 /*
     Idea: Pick an element as pivot, put all smaller elements to the left of the pivot, and all greater elements to the right of the pivot.

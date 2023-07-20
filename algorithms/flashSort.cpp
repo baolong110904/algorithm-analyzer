@@ -1,5 +1,5 @@
 // Compare
-void flashSort_compare(int arr[], int n, int &count_compare) {
+void flashSort_compare(int arr[], int n, long long int &count_compare) {
     count_compare = 0;
 
     int minVal = arr[0];
@@ -54,7 +54,7 @@ void flashSort_compare(int arr[], int n, int &count_compare) {
     }
     delete[] l;
 
-    int temp_count_compare = 0;
+    long long int temp_count_compare = 0;
     insertionSort_compare(arr, n, temp_count_compare);
 
     count_compare += temp_count_compare;

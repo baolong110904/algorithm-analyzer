@@ -1,6 +1,6 @@
 
 // Compare
-void shellSort_compare(int arr[], int n, int &count_compare) {
+void shellSort_compare(int arr[], int n, long long int &count_compare) {
     count_compare = 0;
 
     for (int interval = n / 2; ++count_compare && interval > 0; interval /= 2) {

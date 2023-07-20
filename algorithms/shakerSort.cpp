@@ -1,6 +1,6 @@
 
 // Comparation
-void shakerSort_compare(int arr[], int n, int &count_compare) {
+void shakerSort_compare(int arr[], int n, long long int &count_compare) {
     count_compare = 0;
 
     int left = 1, right = n-1, k = n-1;

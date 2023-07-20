@@ -26,7 +26,9 @@ Note the details of the algorithm (idea, big O, bla bla...) at the end of file (
 
 ### Stage 2
 **Bao:** completing code
+
 **Long:** starting writing report
+
 **Dung & Quan:** finding how to draw chart & trying drawing some charts (no need accurate data)
 
 **Deadline Thu July 20**

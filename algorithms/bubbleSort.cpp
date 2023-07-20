@@ -1,6 +1,7 @@
 
 // Compare
-void bubbleSort_compare(int arr[], int n, int &count_compare) {
+void bubbleSort_compare(int arr[], int n, long long int &count_compare) {
+    count_compare = 0;
     for (int i = 1; ++count_compare && i <= n - 1; i++) {
         for (int j = n - 1; ++count_compare && j >= i; j--) {
             if (++count_compare && arr[j - 1] > arr[j]) {

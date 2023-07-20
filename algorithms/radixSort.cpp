@@ -1,5 +1,5 @@
 // Compare
-void radixSort_compare(int arr[], int n, int &count_compare) {
+void radixSort_compare(int arr[], int n, long long int &count_compare) {
     count_compare = 0;
 
     int max_val = arr[0];
@@ -39,7 +39,7 @@ void radixSort_compare(int arr[], int n, int &count_compare) {
     }
 }
 // Time
-void radixSort_Time(int arr[], int n, double &count_time) {
+void radixSort_time(int arr[], int n, double &count_time) {
     double time_start = clock();
 
     int max_val = arr[0];

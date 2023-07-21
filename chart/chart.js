@@ -149,3 +149,7 @@ const ctxBar = document.getElementById('barChart');
                 }
             },
         });
+
+fetch('./data.json')
+.then(res => res.json())
+.then(data => console.log(data))

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Statistic</title>
+        <link rel="stylesheet" href="./chart/style.css" />
+    </head>
+
+    <body>
+        <h1>ALGORITHM ANALYZER</h1>
+
+        <!-- Table -->
+        <section class="tables">
+            <h2>Experimental results table</h2>
+        </section>
+
+        <!-- Time -->
+        <section class="time-charts">
+            <h2>Time estimate chart</h2>
+            <h3>Random Input</h3>
+            <canvas id="time-rand-nn"></canvas>
+            <canvas id="time-rand-nlogn"></canvas>
+            <canvas id="time-rand-n"></canvas>
+            <h3>Nearly Sorted Input</h3>
+            <canvas id="time-nsorted-nn"></canvas>
+            <canvas id="time-nsorted-nlogn"></canvas>
+            <canvas id="time-nsorted-n"></canvas>
+            <h3>Sorted Input</h3>
+            <canvas id="time-sorted-nn"></canvas>
+            <canvas id="time-sorted-nlogn"></canvas>
+            <canvas id="time-sorted-n"></canvas>
+            <h3>Reversed Input</h3>
+            <canvas id="time-rev-nn"></canvas>
+            <canvas id="time-rev-nlogn"></canvas>
+            <canvas id="time-rev-n"></canvas>
+        </section>
+
+        <!-- Compare -->
+        <section class="comp-charts">
+            <h2>Comparision estimate chart</h2>
+            <h3>Random Input</h3>
+            <canvas id="comp-rand-nn"></canvas>
+            <canvas id="comp-rand-nlogn"></canvas>
+            <canvas id="comp-rand-n"></canvas>
+            <h3>Nearly Sorted Input</h3>
+            <canvas id="comp-nsorted-nn"></canvas>
+            <canvas id="comp-nsorted-nlogn"></canvas>
+            <canvas id="comp-nsorted-n"></canvas>
+            <h3>Sorted Input</h3>
+            <canvas id="comp-sorted-nn"></canvas>
+            <canvas id="comp-sorted-nlogn"></canvas>
+            <canvas id="comp-sorted-n"></canvas>
+            <h3>Reversed Input</h3>
+            <canvas id="comp-rev-nn"></canvas>
+            <canvas id="comp-rev-nlogn"></canvas>
+            <canvas id="comp-rev-n"></canvas>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="./chart/chart.js"></script>
+    </body>
+</html>

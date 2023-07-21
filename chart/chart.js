@@ -1,5 +1,5 @@
 // Fetch
-fetch('data.json')
+fetch('./chart/data.json')
 .then(res => res.json())
 .then (json => {
     var fields = ['time', 'comp']
@@ -48,8 +48,9 @@ fetch('data.json')
                     var datasets = []
                     algoSets[algoIdx].forEach(algoName => {
                         datasets.push({
-                            label: algo,
-                            data: json[field][order][algo][algoName.toLocaleLowerCase().split(' ')[0]]
+                            label: algoName,
+                            data: json[field][order][algo][algoName.toLocaleLowerCase().split(' ')[0]],
+                            borderWidth: 4
                         })
                     })
                     new Chart(chart, {
@@ -57,6 +58,22 @@ fetch('data.json')
                         data: {
                             labels: sizeSet,
                             datasets: datasets
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'RUNNING TIME IN SECONDS'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'INPUT SIZE'
+                                    }
+                                }
+                            }
                         }
                     })
                 } else {
@@ -76,6 +93,22 @@ fetch('data.json')
                         data: {
                             labels: algoSets[algoIdx],
                             datasets: datasets
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    title: {
+                                        display: true,
+                                        text: 'NUMBER OF COMPARISIONS'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'ALGORITHMS'
+                                    }
+                                }
+                            }
                         }
                     })
                 }

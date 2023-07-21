@@ -3,7 +3,7 @@ void merge_time(int arr[], int first, int mid, int last) {
     int first1 = first, last1 = mid;
     int first2 = mid + 1, last2 = last;
 
-    int temp[999];
+    int* temp = new int [MAX_SIZE];
     int idx = first1;
 
     while ((first1 <= last1) && (first2 <= last2)) {
@@ -19,6 +19,8 @@ void merge_time(int arr[], int first, int mid, int last) {
     for (idx = first; idx <= last; ++idx) {
         arr[idx] = temp[idx];
     }
+    
+    delete [] temp;
 }
 void mergeSort_time(int arr[], int first, int last, double &count_time) {
     double time_start = clock();
@@ -39,7 +41,7 @@ void merge_compare(int arr[], int first, int mid, int last, long long int &count
     int first1 = first, last1 = mid;
     int first2 = mid + 1, last2 = last;
 
-    int temp[999];
+    int* temp = new int [MAX_SIZE];
     int idx = first1;
 
     while ((++count_compare && first1 <= last1) && (++count_compare && first2 <= last2)) {
@@ -55,6 +57,8 @@ void merge_compare(int arr[], int first, int mid, int last, long long int &count
     for (idx = first; ++count_compare && idx <= last; ++idx) {
         arr[idx] = temp[idx];
     }
+
+    delete [] temp;
 }
 void mergeSort_compare(int arr[], int first, int last, long long int &count_compare) {
     if (++count_compare && first < last) {

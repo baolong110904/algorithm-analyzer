@@ -7,45 +7,61 @@ const ctxBar = document.getElementById('barChart');
                 datasets: [{
                     label: '10, 000', //1
                     data: [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000],
-                    borderColor: 'red',
+                    backgroundColor: 'tomato',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
                 {
                     label: '30,000', //2
                     data: [2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000],
-                    borderColor: 'blue',
+                    backgroundColor: 'Cyan',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
                 {
                     label: '50,000', //3
                     data: [3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000],
-                    borderColor: 'green',
+                    backgroundColor: 'Lime',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
                 {
                     label: '100,000', //4
                     data: [4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000],
-                    borderColor: 'purple',
+                    backgroundColor: 'Magenta',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
                 {
                     label: '300,000', //5
                     data: [5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000],
-                    borderColor: 'orange',
+                    backgroundColor: 'Olive',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
                 {
                     label: '500,000', //6
                     data: [7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000],
-                    borderColor: 'teal',
+                    backgroundColor: 'Yellow',
+                    borderColor: '#333',
                     borderWidth: 3
                 },
             ]
             },
             options: {
                 scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'ALGORITHM'
+                        }
+                    },
                     y: {
-                        beginAtZero: false
+                        beginAtZero: false,
+                        title: {
+                            display: true,
+                            text: 'NUMBERS OF COMPARISONS'
+                        }
                     }
                 }
             }

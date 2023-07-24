@@ -139,4 +139,5 @@ void flashSort_compare(int arr[], int n, long long int &count_compare) {
     3.3 worst: n*n
 4. Reference
 https://github.com/HaiDuc0147/sortingAlgorithm
+https://en.wikipedia.org/wiki/Flashsort
 */

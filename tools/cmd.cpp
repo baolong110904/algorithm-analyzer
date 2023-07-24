@@ -43,7 +43,7 @@ void todoCommand1(string algorithm_name, string input_file, string output_parame
             cout << "Comparisions: " << count_compare << endl;
         }
         // Write to output file
-        ofstream ofs("store/output.txt");
+        ofstream ofs("output.txt");
         ofs << n << endl;
         for (int i=0; i<n; i++) {
             ofs << arr[i] << " ";
@@ -71,7 +71,7 @@ void todoCommand2(string algorithm_name, string input_size, string input_order, 
     int* arr = new int [n];
     GenerateData(arr, n, dataType);
     // Write to input file
-    ofstream ofs("store/input.txt");
+    ofstream ofs("input.txt");
     ofs << n << endl;
     for (int i=0; i<n; i++) {
         ofs << arr[i] << " ";
@@ -108,10 +108,10 @@ void todoCommand3(string algorithm_name, string input_size, string output_parame
     GenerateData(arr_rev, n, 2);
     GenerateData(arr_nsorted, n, 3);
     // Write to output file
-    ofstream ofs_rand("store/input_1.txt");
-    ofstream ofs_nsorted("store/input_2.txt");
-    ofstream ofs_sorted("store/input_3.txt");
-    ofstream ofs_rev("store/input_4.txt");
+    ofstream ofs_rand("input_1.txt");
+    ofstream ofs_nsorted("input_2.txt");
+    ofstream ofs_sorted("input_3.txt");
+    ofstream ofs_rev("input_4.txt");
     ofs_rand << n << endl;
     ofs_nsorted << n << endl;
     ofs_sorted << n << endl;
@@ -185,7 +185,10 @@ void todoCommand4(string algorithm_name_1, string algorithm_name_2, string file_
         int* arr_1 = new int [n];
         int* arr_2 = new int [n];
         for (int i=0; i<n; i++) {
-            ifs >> arr_1[i] >> arr_2[i];
+            ifs >> arr_1[i];
+        }
+        for (int i=0; i<n; i++) {
+            arr_2[i] = arr_1[i];
         }
         // Print info
         cout << "ALGORITHM MODE" << endl;
@@ -201,7 +204,7 @@ void todoCommand4(string algorithm_name_1, string algorithm_name_2, string file_
         cout << "Running time: " << count_time_1 << " | " << count_time_2 << endl;
         cout << "Comparisions: " << count_compare_1 << " | " << count_compare_2 << endl;
         // Write to output file
-        ofstream ofs("store/output.txt");
+        ofstream ofs("output.txt");
         ofs << n << endl;
         for (int i=0; i<n; i++) {
             ofs << arr_1[i] << " ";
@@ -234,7 +237,7 @@ void todoCommand5(string algorithm_name_1, string algorithm_name_2, string input
         arr_2[i] = arr_1[i];
     }
     // Write to input file
-    ofstream ofs("store/input.txt");
+    ofstream ofs("input.txt");
     ofs << n << endl;
     for (int i=0; i<n; i++) {
         ofs << arr_1[i] << " ";

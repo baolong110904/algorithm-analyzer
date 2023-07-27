@@ -15,6 +15,35 @@ Open VS Code
 ```sh
 code .
 ```
+
+## How to run
+From the repo folder command line
+
+Command 1
+```sh
+./main.exe -a sort_name input_file_name -output_type
+```
+Command 2
+```sh
+./main.exe -a sort_name input_size -input_order -output_type
+```
+Command 3
+```sh
+./main.exe -a sort_name input_size -output_type
+```
+Command 4
+```sh
+./main.exe -c sort_name_1 sort_name_2 input_file_name
+```
+Command 5
+```sh
+./main.exe -c sort_name_1 sort_name_2 input_size -input_order
+```
+**sort_name**: selection-sort, insertion-sort, bubble-sort, shaker-sort, shell-sort, heap-sort, merge-sort, quick-sort, counting-sort, radix-sort, and flash-sort
+
+**-input_order**: **-rand**: randomized, **-nsorted**: nearly sorted,  **-sorted**: sorted, **-rev**: reverse sorted
+
+**-output_type**: **-time**: algorithms’s running time, **-comp**: number of comparisions, **-both**: both above options
 ## Stages
 ### Stage 1
 Inside **algorithms folder** create a file **algorithmName.cpp**  that includes 2 version of algorithms (running time analyzer & compare analyzer)

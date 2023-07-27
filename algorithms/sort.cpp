@@ -33,6 +33,7 @@ void sort(string sort_name, string output_type, int arr[], int n, double &count_
         } else if (sort_name == "flash-sort") {
             flashSort_time(arr, n, count_time);
         }
+        count_time *= 1000;
     }
     // Compare
     if (output_type == "-comp" || output_type == "-both") {

@@ -15,8 +15,8 @@ void heapify_compare(int arr[], int n, int index, long long int &count_compare);
 void heapSort_compare(int arr[], int n, long long int &count_compare);
 void merge_time(int arr[], int first, int mid, int last);
 void mergeSort_time(int arr[], int first, int last, double &count_time);
-
-
+void quickSort_time(int arr[], int first, int last, double &count_time);
+void quickSort_compare(int arr[], int first, int last, long long int &count_compare);
 void countingSort_time(int arr[], int n, double &count_time);
 void countingSort_compare(int arr[], int n, long long int &count_compare);
 void radixSort_time(int arr[], int n, double &count_time);

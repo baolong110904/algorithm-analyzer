@@ -64,7 +64,7 @@ fetch('./chart/data.json')
                                 y: {
                                     title: {
                                         display: true,
-                                        text: 'RUNNING TIME IN SECONDS'
+                                        text: 'RUNNING TIME IN MILLISECONDS'
                                     }
                                 },
                                 x: {

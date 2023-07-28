@@ -10,7 +10,7 @@
 using namespace std;
 
 #include "algorithms/algorithms.h"
-#include "tools/dataGenerator.cpp"
+#include "tools/DataGenerator.cpp"
 #include "tools/cmd.cpp"
 
 int main(int argc, char *argv[]) {
